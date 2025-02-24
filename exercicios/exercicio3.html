@@ -1,0 +1,20 @@
+<script>
+
+    let tarefas = [];
+
+    let continuar = 'sim'
+
+
+    while(continuar == 'sim') {
+        tarefas.push(prompt('Digite suas cinco tarefas: '));
+        continuar = prompt('Deseja colocar mais alguma tarefa? sim/não')
+
+    }
+    
+    
+
+    tarefas.forEach(function(tarefa) {
+        console.log(tarefa);
+    })
+
+</script>

@@ -1,0 +1,20 @@
+<script>
+
+        let limite = 5;
+        let contador = 1;
+        let numeros = [];
+        let total = 0;
+
+    while(contador <= limite) {
+        numeros.push(parseFloat(prompt('Digite um número: (' + contador + '/' + limite + ')')))
+        contador++;
+    }
+
+    numeros.forEach(function(soma) {
+        total = total + soma
+    });
+
+    console.log(total)
+
+
+</script>
