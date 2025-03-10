@@ -1,0 +1,19 @@
+<script>
+    //Crie um script no qual o usuário irá digitar N números.
+    //Serão exibidos todos em ordem crescente
+
+    let numeros = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim') {
+        numeros.push(parseFloat(prompt('Adicione um novo numero')));
+        numeros.sort(function(a, b){
+            return a - b}
+        );
+        continuar = prompt('Deseja adicionar mais algum? (sim/não)'.toLowerCase());
+        
+
+    }
+    console.log(numeros);
+
+</script>

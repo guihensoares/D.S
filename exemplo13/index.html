@@ -1,0 +1,27 @@
+<script>
+    //Crie um script no qual contém um array com 10 números.
+    //Será perguntado ao usuário qual número deseja buscar
+    //e o sistema irá mostrar se encontrou ou não o número
+    //escolhido.
+    
+
+    let numeros = [20, 10, 6, 8, 51, 43, 91, 99, 31, 29];
+    let busca = parseFloat(prompt('busque por um numero: '))
+    let encontrou = false;
+
+    
+    for (let index = 0; index < numeros.length; index++) {
+        if (busca == numeros[index]) {
+            encontrou = true;
+        
+        }
+    }
+
+    if (!encontrou) {
+        alert ("número encontrado");
+
+    } else {
+        alert ("Número não encontrado");
+    }
+
+</script>

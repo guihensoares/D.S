@@ -1,0 +1,20 @@
+<script>
+    // Crie um script no qual o usuário irá digitar o 
+    // nome de veículos. 
+    // O usuário poderá cadastrar quantos veículos desejar.
+
+    // Ao finalizar, exiba todos os veículos cadastrados com console.log
+
+    let veiculos = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim') {
+        veiculos.push(prompt('Adicione o nome do veículo'));
+        continuar = prompt('Deseja adicionar mais algum? (sim/não)');
+        continuar = continuar.toLowerCase();
+
+    }
+    console.log(veiculos);
+
+    
+</script>
