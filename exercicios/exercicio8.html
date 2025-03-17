@@ -1,0 +1,15 @@
+<script>
+    let produtos = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim') {
+        produtos.push(prompt('Digite um produto'));
+        continuar = prompt('Deseja adicionar mais algum item? (sim/não)');
+        continuar = continuar.toLowerCase();
+    }
+
+    produtos.forEach(
+        function(produto) {
+       console.log(produto);
+    }) 
+</script>

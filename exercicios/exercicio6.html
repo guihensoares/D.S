@@ -1,21 +1,25 @@
 <script>
 
-// concertar essa atividade
-
     let limite = 5;
     let contador = 1;
     let notas = [];
-    let total = 0;
-    let media = 0;
+    let somatoria = 0;
 
-    while(contador <= limite) {
-        notas.push(parseFloat(prompt('Digite as suas notas: (' + contador + '/' + limite + ')')))
+    while (contador <= limite) {
+        notas.push(parseFloat(prompt('Digite a sua nota: (' + contador + '/' + limite + ')')));
         contador++;
+        // console.log(notas.length);
     }
 
-    notas.forEach(function(nota) {
+    notas.forEach(function(nota){
+        somatoria = somatoria + nota;
+    })
 
-    }
-    )
-
+    media = somatoria / 5;
+    
+    if (media >= 7) {
+        console.log('Aprovado!');
+    } else {
+        console.log('Reprovado!');
+    }8
 </script>

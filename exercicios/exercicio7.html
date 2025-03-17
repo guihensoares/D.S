@@ -1,0 +1,18 @@
+<script>
+    let palavras = [];
+    let limite = 5;
+    let contador = 1;
+
+    while (contador <= limite) {
+        palavras.push(prompt('Digite uma palavra: (' + contador + "/" + limite + ")"));
+        contador++;
+    }
+
+    palavras.forEach(function(palavra,index ) {
+        console.log('palavra' + index + ":" + palavra);
+    }) 
+    
+
+
+
+</script>

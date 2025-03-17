@@ -1,0 +1,17 @@
+<script>
+    let nome = [];
+    let gols = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim') {
+        nome.push(prompt('Digite o nome do jogador: '));
+        gols.push(parseFloat(prompt('Digite a quantidade que o jogador fez: ')));
+        continuar = prompt('Deseja adicionar mais algum? (sim/não)');
+        continuar = continuar.toLowerCase();
+
+    }
+
+    nome.forEach(function(jogador, index) {
+        console.log('O jogador ' + jogador + " marcou " + gols[index] + ' gols.');
+    })
+</script>
