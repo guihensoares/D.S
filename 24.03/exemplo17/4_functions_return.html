@@ -1,0 +1,15 @@
+<script>
+    let valor_1 = Number(prompt('Digite o valor'));
+    let operador = prompt('Digite um operador: + - * /');
+
+    alert(showResult());
+
+    function showResult() {
+        let resultado;
+        resultado = operador == '+' ? valor_1 + valor_1 : 'Operador Inválido';
+        resultado = operador == '-' ? valor_1 - valor_1 : 'Operador Inválido';
+        resultado = operador == '*' ? valor_1 * valor_1 : 'Operador Inválido';
+        resultado = operador == '/' ? valor_1 / valor_1 : 'Operador Inválido';
+        return resultado;
+    }
+</script>
