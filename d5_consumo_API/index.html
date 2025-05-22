@@ -18,9 +18,7 @@
     </div>
 
     <div class="container">
-        <div class="row" id="countries-list">
-            <a href=""></a>
-        </div>
+        <div class="row" id="countries-list"></div>
     </div>
 
     <script>
@@ -37,7 +35,9 @@
                     img.setAttribute('src',country.flags.svg);
                     img.style.width = '100%';
                     img.style.borderRadius = '8px';
-                    img.style.padding = '1%';
+
+                    let latlng = document.createElement('iframe');
+                    latlng.setAttribute('src', `https://www.google.com/maps?q=${country.latlng}&hl=pt-BR&z=6&output=embed`);
 
                     let title = document.createElement('h2');
                     title.innerText = country.name.common;
@@ -49,7 +49,7 @@
                     capital.innerText = country.capital
 
                     let population = document.createElement('p');
-                    population.innerText = country.population
+                    population.innerText = `população: ${country.population}`
 
                     let continents = document.createElement('h6');
                     continents.innerText = country.continents;
@@ -70,33 +70,37 @@
                     let coatOfArms = document.createElement('img');
                     coatOfArms.setAttribute('src',country.coatOfArms.svg);
                     coatOfArms.style.width = '90%';
+                    coatOfArms.style.height = '30%'
                     coatOfArms.style.borderRadius = '8px';
-                    coatOfArms.style.padding = '1%';
 
                     let time_zones = document.createElement('h6');
                     time_zones.innerText = country.timezones;
-                    time_zones.style.wordBreak = 'break-all'
+                    time_zones.style.wordBreak = 'break-all';
 
                     let maps = document.createElement('a');
                     maps.setAttribute('href',country.maps.googleMaps);
                     maps.innerText = 'Mapa';
+
+                    
                     
                     let col = document.createElement('div');
                     col.classList.add("col-3");
 
                     col.appendChild(img);
                     col.appendChild(title);
+                    col.appendChild(maps);
                     col.appendChild(sub_title);
                     col.appendChild(capital);
                     col.appendChild(continents);
                     col.appendChild(region);
                     col.appendChild(sub_region);
                     col.appendChild(independent);
+                    col.appendChild(population);
                     col.appendChild(coatOfArms);
                     col.appendChild(border);
-                    col.appendChild(population);
                     col.appendChild(time_zones);
-                    col.appendChild(maps);
+                    col.appendChild(latlng);
+                    
                     
                     
                     
