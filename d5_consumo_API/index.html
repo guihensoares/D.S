@@ -38,6 +38,11 @@
 
                     let latlng = document.createElement('iframe');
                     latlng.setAttribute('src', `https://www.google.com/maps?q=${country.latlng}&hl=pt-BR&z=6&output=embed`);
+                    latlng.style.padding="5px";
+                    latlng.style.height="200px";
+                    latlng.style.width="75%";
+                    latlng.style.border="20px";
+                    
 
                     let title = document.createElement('h2');
                     title.innerText = country.name.common;
