@@ -1,0 +1,35 @@
+body{
+    background-color: var(--black);
+    padding: 0;
+    border: 0;
+}
+
+.nav-link :hover{
+    color: var(--white);
+    
+}
+
+.primeira-secao{
+    height: 88vh;
+}
+
+h1{
+    color: var(--white);
+    font-family: "Lato";
+}
+
+:root{
+    --black:#0A0C1B;
+    --white:#F5F7FA;
+    --bluedark:#1D3557;
+    --bluelight:#457B9D;
+    --green:#6ACFC7;
+    --green2:#5DF2FF;
+}
+
+
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
