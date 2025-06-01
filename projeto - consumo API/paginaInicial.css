@@ -51,7 +51,13 @@ strong{
     height: 650px;
     display: flex;
     padding: 20px;
-    background-color: var(--red);
+    background-color: var(--white);
+}
+
+.titulo-marte{
+    font-family: "Lato";
+    color: var(--black);
+
 }
 
 #negritoRed{
