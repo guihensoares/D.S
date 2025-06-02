@@ -1,4 +1,4 @@
-<!-- API key - yHheFpSebvawkKUjW7HCI0aYfBhvn0nuT5yK7vIJ-->
+<!-- API key - PBFbUJXefPkim5a7P9AGgvPHglaDqY1s1VQx3QVk-->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <img src="../projeto - consumo API/imagens/logofinal.svg" alt="logo" style="max-height:90px; width: 90px;">
+      <img src="../projeto - consumo API/imagens/logofinal.svg" alt="logo" class="logofinal" style="max-height:90px; width: 90px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,53 +56,138 @@
     </div>
   </nav>
 
-  <section class="primeira-secao">
-    <div class="container-fluid d-flex justify-content-start" id="texto">
+  <!-- seção1 - foto do dia -->
+ 
+  <section>
+    <div class="container-fluid d-flex justify-content-center" id="texto" style="padding: 20px;">
       <div class="row">
         <div class="col-12">
-          <h1>Veja as Fotos <br>Astronômicas <strong> de Hoje</strong></h1>
-          <a href="#" class="botao-fotos">Clique Aqui!</a>
+          <h1>Veja as Fotos Astronômicas <strong> de Hoje</strong></h1>
+          <h6>Veja logo <strong>abaixo</strong></h6>
         </div>
       </div>
     </div>
+    <div class="container-fluid d-flex justify-content-center" id="imagemDia">
+      
+    </div>
+  </section>
+  
+  <script>
+    let imagem_do_dia = document.querySelector('#imagemDia');
+    
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=PBFbUJXefPkim5a7P9AGgvPHglaDqY1s1VQx3QVk`)
+    .then(resp=> resp.json())
+    .then(resp =>{
 
-    <div class="container-fluid d-flex justify-content-start" id="carrosel">
+        let col = document.createElement('div');
+        col.style.display = 'flex';
+        col.style.alignItems = 'center';
+        col.style.padding = '20px';
+        col.classList.add("col-12")
+
+        let img = document.createElement('img');
+        img.setAttribute('src',resp.url);
+        img.style.width = '50%';
+        img.style.padding = '20px';
+        
+        let colTexto = document.createElement('div');
+        colTexto.classList.add("col-6");
+        
+        let title = document.createElement('h1');
+        title.innerText = resp.title;
+        
+        let explicacao = document.createElement('h4');
+        explicacao.innerText = resp.explanation;
+        
+        let date = document.createElement('h4');
+        date.innerText = resp.date;
+        
+        col.appendChild(img);
+        col.appendChild(colTexto);
+        colTexto.appendChild(date);
+        colTexto.appendChild(title);
+        colTexto.appendChild(explicacao);
+        imagem_do_dia.appendChild(col);
+      })
+      
+    .catch(erro => {
+      console.log(erro);
+    })
+    .finally( () => {
+      console.log('Requisição Finalizada!');
+    })
+  </script>
+
+<!-- seção2 - cinco fotos-->
+
+  <section id="secao2-titulo">
+    <div class="container-fluid d-flex justify-content-center" id="texto2" style="padding: 20px;">
       <div class="row">
-
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../projeto - consumo API/imagens/imagem1.svg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../projeto - consumo API/imagens/imagem2.svg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../projeto - consumo API/imagens/imagem3.svg" class="d-block w-100" alt="...">
-            </div>
-          </div>
+        <div class="col-12">
+          <h1>Veja <strong>Mais</strong> Cinco Fotos Astronômicas</h1>
+          <h6>Veja logo <strong>abaixo</strong></h6>
         </div>
-
       </div>
-
+    </div>
     </div>
   </section>
 
-  <section class="segunda-secao"> 
-    <div class="container-fluid d-flex justify-content-start" id="texto">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="titulo-marte">Veja as Fotos <br>de <strong id="negritoRed"> Marte</strong></h1>
-          <a href="#" class="botao-marte">Clique Aqui!</a>
-        </div>
-      </div>
-    </div>
+  <section id="fiveFotos">
+
   </section>
 
+  <script>
+    let cinco_fotos = document.querySelector('#fiveFotos');
+    
+    fetch(`https://api.nasa.gov/planetary/apod?count=5&api_key=PBFbUJXefPkim5a7P9AGgvPHglaDqY1s1VQx3QVk`)
+    .then(resp=> resp.json())
+    .then(resp =>{
+      resp.forEach(photos => {
+        let col = document.createElement('div')
+        col.classList.add('col-12');
+        col.style.display = 'flex';
+        col.style.alignItems = 'center';
+        col.style.padding = '30px';
+
+        let img = document.createElement('img');
+        img.setAttribute('src',photos.url);
+        img.style.width = '50%';
+        img.style.padding = '20px';
+
+        let colTitle = document.createElement('div');
+        colTitle.classList.add('col-6');
+
+        let title = document.createElement('h1');
+        title.innerText = photos.title;
+
+        let date = document.createElement('h4');
+        date.innerText = photos.date;
+
+        let explicacao = document.createElement('h4');
+        explicacao.innerText = photos.explanation;
+
+        cinco_fotos.appendChild(col);
+
+        col.appendChild(img);
+        col.appendChild(colTitle);
+        colTitle.appendChild(date);
+        colTitle.appendChild(title);
+        colTitle.appendChild(explicacao);
+
+
+      });
+
+    }) 
+    .catch(erro => {
+      console.log(erro);
+    })
+    .finally( () => {
+      console.log('Requisição Finalizada!');
+    })
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
