@@ -35,9 +35,14 @@ strong{
     background-color: var(--black2);
 }
 
+#secao3-titulo {
+    background-color: var(--black3);
+}
+
 :root{
     --black:#0A0C1B;
     --black2: #11142e;
+    --black3:#181d40;
     --white:#F5F7FA;
     --strong:#5DF2FF;
 }
