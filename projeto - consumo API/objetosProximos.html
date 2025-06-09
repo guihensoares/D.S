@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="../projeto - consumo API/imagens/favicon.svg" type="image/x-icon">
+
+    <title>Objetos Próximos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../projeto - consumo API/paginaInicial.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <img src="../projeto - consumo API/imagens/logofinal.svg" alt="logo" class="logofinal"
+                style="max-height:90px; width: 90px;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../projeto - consumo API/paginaMarte.html">Fotos
+                            de Marte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Objetos Próximos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fotos da Terra</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Imagens
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../projeto - consumo API/paginaFotoDia.html">Imagens de
+                                    Hoje</a></li>
+                            <li><a class="dropdown-item" href="../projeto - consumo API/paginaFiveFotos.html">Imagens de
+                                    Vários Dias</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- secao - objetos proximos -->
+
+    <section id="secao2-titulo">
+        <div class="container-fluid d-flex justify-content-center" id="texto" style="padding: 20px;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Veja <strong>Alguns</strong> Objetos Próximos da Terra</h1>
+                    <h6>Veja logo <strong>abaixo</strong></h6>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="d-flex flex-wrap" id="obj-proximos">
+    
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let objetos_proximos = document.querySelector('#obj-proximos');
+
+        fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2025-05-20&end_date=2025-05-26&api_key=PBFbUJXefPkim5a7P9AGgvPHglaDqY1s1VQx3QVk`)
+            .then(resp => resp.json())
+            .then(resp => {
+
+                let object = resp.near_earth_objects;
+
+                // Itera sobre as chaves (datas)
+                Object.keys(object).forEach(date => {
+                    console.log("Data:", date);
+                    console.log(object[date]);
+                    // Itera sobre o array de objetos daquela data
+                    object[date].forEach(asteroid => {
+                        console.log(asteroid.name);
+
+                        let col = document.createElement('div');
+                        col.classList.add("border", "border-1");
+                        col.style.padding = '20px';
+                        col.style.margin = '10px';
+
+                        let nome = document.createElement('h2');
+                        nome.innerHTML = asteroid.name;
+
+                        objetos_proximos.appendChild(col);
+
+                        col.appendChild(nome);
+                    });
+                });
+
+
+
+
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
+            .finally(() => {
+                console.log('Requisição Finalizada!');
+            })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
