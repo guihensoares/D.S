@@ -96,7 +96,7 @@
                     console.log(object[date]);
                     // Itera sobre o array de objetos daquela data
                     object[date].forEach(asteroid => {
-                        console.log(asteroid.name);
+                        // console.log(asteroid.name);
 
                         let col = document.createElement('div');
                         col.classList.add("border", "border-1");
@@ -106,9 +106,18 @@
                         let nome = document.createElement('h2');
                         nome.innerHTML = asteroid.name;
 
+                        let id = document.createElement('h6');
+                        id.innerHTML = asteroid.id;
+
+                        let data = document.createElement('h6');
+                        data.innerHTML = asteroid.miss_distance.;
+                        // ERRO NA LINHA ACIMA, termine!
+
                         objetos_proximos.appendChild(col);
 
                         col.appendChild(nome);
+                        col.appendChild(id);
+                        
                     });
                 });
 
