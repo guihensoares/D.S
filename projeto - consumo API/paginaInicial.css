@@ -1,38 +1,48 @@
-body{
+body {
     background-color: var(--black);
     height: 100vh;
 }
 
 .nav-link {
     color: var(--white);
-    
+
 }
 
 .nav-link:hover {
     color: var(--strong);
 }
 
-h1{
+h1 {
     color: var(--white);
     font-family: "Lato";
 }
 
-h2{
+h2 {
     color: var(--white);
     font-family: "Lato";
 }
 
-h6{
+h6 {
     color: var(--white);
     font-family: "Lato";
 }
 
-h4{
+h5 {
     color: var(--white);
     font-family: "Lato";
 }
 
-strong{
+h4 {
+    color: var(--white);
+    font-family: "Lato";
+}
+
+p {
+    color: var(--white);
+    font-family: "Lato";
+}
+
+strong {
     color: var(--strong);
 }
 
@@ -48,10 +58,10 @@ strong{
     background-color: var(--black);
 }
 
-:root{
-    --black:#0A0C1B;
-    --white:#F5F7FA;
-    --strong:#5DF2FF;
+:root {
+    --black: #0A0C1B;
+    --white: #F5F7FA;
+    --strong: #5DF2FF;
 }
 
 
@@ -59,4 +69,4 @@ strong{
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: normal;
-  }
+}
