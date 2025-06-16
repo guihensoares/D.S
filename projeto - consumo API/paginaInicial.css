@@ -13,6 +13,20 @@ a{
     text-decoration: none;
 }
 
+#mars_robo {
+    background-image: url('./imagens/robo\ mars.png');
+    height: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#txt-mars {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 53px;
+}
+
 .nav-link:hover {
     color: var(--strong);
 }
@@ -63,3 +77,10 @@ strong {
     font-weight: 100;
     font-style: normal;
 }
+
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
