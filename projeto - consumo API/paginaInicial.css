@@ -20,6 +20,14 @@ a{
     margin-bottom: 50px;
 }
 
+#satelite_DSCOVR {
+    background-image: url('./imagens/DSCOVR_SATELITE.jpg');
+    height: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-size: cover;
+}
+
 #txt-mars {
     font-family: "Lato", sans-serif;
     font-weight: 900;
@@ -37,10 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-    color: var(--white);
-}
-
-.vr{
     color: var(--white);
 }
 
