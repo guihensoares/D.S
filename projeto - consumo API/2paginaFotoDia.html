@@ -72,7 +72,13 @@
         </div>
       </div>
     </div>
-    <div class="container d-flex justify-content-center" id="imagemDia">
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center py-5" id="imagemDia">
+
+      </div>
+    </div>
+
 
     </div>
   </section>
@@ -110,15 +116,16 @@
         col.style.display = 'flex';
         col.style.alignItems = 'center';
         col.style.padding = '20px';
-        col.classList.add("col-6", "justify-content-center")
+        col.classList.add("col-10", "col-sm-8", "col-lg-6");
 
         let img = document.createElement('img');
         img.setAttribute('src', resp.url);
         img.style.width = '100%';
         img.style.padding = '20px';
+        img.classList.add("d-block", "img-fluid");
 
         let colTexto = document.createElement('div');
-        colTexto.classList.add("col-6","d-flex", "flex-column");
+        colTexto.classList.add("col-lg-6", "flex-column");
         colTexto.style.textAlign = 'center'
 
         let title = document.createElement('h1');
@@ -126,7 +133,7 @@
 
         let explicacao = document.createElement('p');
         explicacao.innerText = resp.explanation;
-        explicacao.classList.add("text-start"); 
+        explicacao.classList.add("text-start");
 
         let date = document.createElement('h4');
         date.innerText = `🗓️ ${resp.date}`;
