@@ -1,0 +1,93 @@
+<script>
+    class Veiculo {
+        constructor(marca, modelo) {
+            this.marca = marca;
+            this.modelo = modelo;
+        }
+
+        acelerar() {
+            console.log(`${this.modelo} acelerou!!!`)
+        }
+        freiar() {
+            console.log(`${this.modelo} freiou!!!`)
+        }
+    }
+
+    let veiculo_1 = new Veiculo('Fiat', 'Uno 1994');
+    console.log(`Seu veículo ${veiculo_1.modelo}`)
+    veiculo_1.acelerar();
+    veiculo_1.freiar();
+    console.log(veiculo_1);
+
+    class Pessoa {
+        //Características | propriedades
+        constructor(nome, idade, cpf, telefone) {
+            this.nome = nome;
+            this.idade = idade;
+            this.cpf = cpf;
+            this.telefone = telefone;
+        }
+        //Ações | Método
+        correr() {
+            console.log(`A pessoa correu!!!`)
+        }
+
+        pular() {
+            console.log(`A pessoa pulou!!!`)
+        } ''
+
+        falar() {
+            console.log(`${this.nome} disse: Olá!!!`)
+        }
+    }
+
+    let pessoa = new Pessoa('Erik', '23', '101.468.276-32', '1825732917');
+    pessoa.correr();
+    pessoa.pular();
+    pessoa.falar();
+
+    class Animal {
+        constructor(nome, nomeCientifico, cor, habitat) {
+            this.nome = nome;
+            this.nomeCientifico = nomeCientifico;
+            this.cor = cor;
+            this.habitat = habitat;
+        }
+
+        correu() {
+            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} correu para a mata!!!`)
+        }
+
+        atacou() {
+            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} atacou bixos!!!`)
+        }
+
+        comeu() {
+            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} comeu bixos!!!`)
+        }
+
+        dormiu() {
+            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} dormiu perto da mata!!!`)
+        }
+
+    }
+
+    class Tatu extends Animal {
+        constructor (nome, nomeCientifico, cor, habitat) {
+            super(nome, nomeCientifico, cor, habitat);
+        }
+
+        matar() {
+            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} matou toperas!!!`)
+        }
+        
+    }
+
+    let animal = new Animal('Pelo Sujo', 'Tolypeutes', 'Marrom', 'Bordas da Mata');
+    animal.correu();
+    animal.atacou();
+    animal.comeu();
+    animal.dormiu();
+    animal.matou();
+
+</script>
