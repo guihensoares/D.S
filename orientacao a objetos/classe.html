@@ -1,0 +1,27 @@
+<script>
+    class Pessoa {
+        constructor(nome, idade, cpf){
+            this.nome = nome;
+            this.idade = idade;
+            this.cpf = cpf;
+        }
+
+        falar(){
+            console.log('Olá!');
+        }
+
+        andar(){
+            console.log(`A pessoa andou!!`);
+        }
+    }
+
+    let professor = new Pessoa('Xavier', '72','734.792.142');
+    console.log(professor.nome);
+    console.log(professor.idade);
+    console.log(professor.cpf);
+    console.log(professor.falar());
+    console.log(professor.andar());
+
+    let aluno = new Pessoa('Logan','14','456.286.027');
+    console.log(aluno);
+</script>

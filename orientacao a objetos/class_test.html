@@ -1,0 +1,48 @@
+<script>
+
+    /*
+    Criar uma classe usuario. O usuário poderá
+    ser do tipo admnistrador ou usuáro comum
+    é necessário e-mail e senha do usuário.
+    é necessário saber se o usuário está online ou offline.
+    */
+
+    class Usuario {
+
+        /*
+        No constructor está ocorrendo o ENCAPSULAMENTO, ou seja,
+        os dados estão sendo agrupados dentro da classe (cápsula).
+        */
+
+        constructor(nome, email, senha, status, tipo){
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
+            this.status = status;
+            this.tipo = tipo;
+        }
+
+        /*
+        Aqui está ocorrendo o POLIMORFISMO, ou seja, a classe pode conter
+        comportamentos diferentes como conectar, desconectar, etc...
+        */
+
+        conectar(){
+            console.log(`Usuário ${this.nome} conectado!`);
+        }
+        desconectado(){
+            console.log(`Usuário ${this.nome} desconectado!`);
+        }
+        recuperarSenha(){
+            console.log(`Veja o e-mail ${this.email} para recuperar a senha!`);
+        }
+    }
+
+    let adm = new Usuario('Guis','admin201@hotmail.com','senha211', 'online', 'administrador');
+    console.log(adm);
+
+    let user = new Usuario('Baldo','user333@hotmail.com','password123', 'offline', 'comum');
+    console.log(user);
+
+
+</script>
