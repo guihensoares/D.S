@@ -1,0 +1,56 @@
+<script>
+    //Crie uma classe para veículos
+    //Adicione 4 propriedades para o veículo
+    //Adicione os setters e getters
+    /*Crie uma função para calcular quantos 
+    anos o veículos tem, ex: 2025 - 1990*/
+    //Crie 3 instâncias de veículos
+
+    class Veiculos {
+        constructor(cor, ano, marca, nome) {
+            this.cor = cor;
+            this.ano = ano;
+            this.marca = marca;
+            this.nome = nome;
+        }
+
+        set veiculoCor(cor) {
+            this.cor = cor;
+        }
+
+        get veiculoCor() {
+            return this.cor;
+        }
+
+        set veiculoAno(ano) {
+            this.ano = ano;
+        }
+
+        get veiculoAno() {
+            return this.ano;
+        }
+
+        set veiculoMarca(marca) {
+            this.marca = marca;
+        }
+
+        get veiculoMarca() {
+            return this.marca;
+        }
+
+        set veiculoNome(nome) {
+            this.nome = nome;
+        }
+
+        get veiculoNome() {
+            return this.nome;
+        }
+        
+        calcularAno() {
+            return 2025 - this.ano;    
+        }
+    }
+
+    let ford_KA = new Veiculos ();
+    ford_KA.veiculoCor = 'vermelho';
+</script>

@@ -1,0 +1,65 @@
+<script>
+    //Use-se Pascal Case (começa com letra Maiuscula) para o nome da classe
+    class Funcionario {
+        constructor(nome, salario_base, horas_trabalhadas) {
+            this.nome = nome;
+            this.salario_base = salario_base; //usa-se snake_case
+            this.horas_trabalhadas = horas_trabalhadas;
+        }
+
+        //set irá trocar o valor da var nome
+        set funcionarioNome(nome) {
+            this.nome = nome;
+        };
+
+        //irá retornar o nome contido em this.nome
+        get funcionarioNome() {
+            return this.nome;
+        }
+
+        set horasTrabalhadas(horas_trabalhadas) {
+            this.horas_trabalhadas = horas_trabalhadas;
+        };
+
+        get horasTrabalhadas() {
+            return this.horas_trabalhadas;
+        }
+
+        set salarioBase(salario_base) {
+            this.salario_base = salario_base;
+        };
+
+        get salarioBase() {
+            return this.salario_base;
+        }
+
+        calcularSalario() { //usa-se camelCase
+            return this.salario_base * this.horas_trabalhadas;
+        };
+    }
+
+    let desenvolvedor_backend = new Funcionario();
+    desenvolvedor_backend.funcionarioNome = 'Carlitos Cravo';
+    desenvolvedor_backend.horasTrabalhadas= 100;
+    desenvolvedor_backend.salarioBase = 50;
+    console.log(desenvolvedor_backend.calcularSalario());
+
+    let gerente = new Funcionario();
+    gerente.funcionarioNome = 'Manuela Maru';
+    gerente.horasTrabalhadas = 220;
+    gerente.salarioBase = 20;
+    console.log(gerente.calcularSalario());
+
+    let desenvolvedor_frontend = new Funcionario();
+    desenvolvedor_frontend.funcionarioNome = 'Joaquim Joá';
+    desenvolvedor_frontend.horasTrabalhadas = 200;
+    desenvolvedor_frontend.salarioBase = 10;
+    console.log(desenvolvedor_frontend.calcularSalario());
+
+    let ux_design = new Funcionario();
+    ux_design.funcionarioNome = 'Gustavo Gaga';
+    ux_design.horasTrabalhadas = 180;
+    ux_design.salarioBase = 60;
+    console.log(ux_design.calcularSalario());
+
+</script>
