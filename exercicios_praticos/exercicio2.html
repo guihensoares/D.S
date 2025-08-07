@@ -1,0 +1,50 @@
+<script>
+    class ContaBancaria{
+        constructor(titular, saldo, numero_conta) {
+            this.titular = titular;
+            this.saldo = saldo;
+            this.numero_conta = numero_conta;
+        }
+
+        set titularConta(nome) {
+            this.titular = titular;
+        }
+        get titularConta() {
+            return this.titular;
+        }
+
+        set saldoConta(idade) {
+            this.saldo = saldo;
+        }
+        get saldoConta() {
+            return this.saldo;
+        }
+
+        set numeroConta(profissao) {
+            this.numero_conta = numero_conta;
+        }
+
+        get numeroConta() {
+            return this.numero_conta;
+        }
+
+        depositar() {
+            let mais_saldo = parseFloat(prompt('Qual o valor a ser depositado:'));
+            return this.saldo + mais_saldo;
+            console.log(`O titular da conta ${this.titular} depositou!`);
+        }
+
+        sacar() {
+            console.log(`O titular da conta ${this.titular} sacou!`);
+        }
+
+        exibirSaldo() {
+            console.log(`Seu saldo atual é: ${this.saldo}.`);
+        }
+    }
+
+    let titular1 = new ContaBancaria;
+    titular1.titularConta = 'Chiquinho';
+    titular1.saldoConta = 300;
+    titular1.numeroConta = 1234567;
+</script>
