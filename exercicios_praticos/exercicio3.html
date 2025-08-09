@@ -1,0 +1,66 @@
+<script>
+    class ContaBancaria{
+        constructor(titular, saldo, numero_conta) {
+            this.titular = titular;
+            this.saldo = saldo;
+            this.numero_conta = numero_conta;
+        }
+
+        set titularConta(titular) {
+            this.titular = titular;
+        }
+        get titularConta() {
+            return this.titular;
+        }
+
+        set saldoConta(saldo) {
+            this.saldo = saldo;
+        }
+        get saldoConta() {
+            return this.saldo;
+        }
+
+        set numeroConta(numero_conta) {
+            this.numero_conta = numero_conta;
+        }
+
+        get numeroConta() {
+            return this.numero_conta;
+        }
+
+        depositar(valor) {
+            console.log(`O valor de R$${valor} foi depositado com sucesso!`);
+            return this.saldo = this.saldo + valor;
+
+        }
+        sacar(valor) {
+            console.log(`Você sacou R$${valor} com sucesso!`);
+            return this.saldo = this.saldo - valor;
+        }
+
+        exibirSaldo() {
+            console.log(`Seu saldo atual é de R$${this.saldo}!`);
+
+        }
+    }
+
+    class ContaPoupanca extends ContaBancaria {
+        constructor(titular, saldo, numero_conta, taxaDeJuros) {
+            super(titular, saldo, numero_conta);
+            this.taxaDeJuros = taxaDeJuros;
+        }
+        
+        aplicarJuros(){
+            return this.saldo = this.saldo * (this.taxaDeJuros / 100);
+            console.log(`Juros de R$${this.saldo} aplicados!`);
+        }
+    }
+    
+    let titular_poupanca = new ContaPoupanca('José', 50, 229829, 50);
+    titular_poupanca.exibirSaldo();
+    titular_poupanca.depositar(900);
+    titular_poupanca.sacar(100);
+    titular_poupanca.aplicarJuros();
+    titular_poupanca.exibirSaldo();
+
+</script>

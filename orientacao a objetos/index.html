@@ -72,22 +72,10 @@
 
     }
 
-    class Tatu extends Animal {
-        constructor (nome, nomeCientifico, cor, habitat) {
-            super(nome, nomeCientifico, cor, habitat);
-        }
-
-        matar() {
-            console.log(`${this.nome} cujo nome cientifico é ${this.nomeCientifico} matou toperas!!!`)
-        }
-        
-    }
-
-    let animal = new Animal('Pelo Sujo', 'Tolypeutes', 'Marrom', 'Bordas da Mata');
-    animal.correu();
-    animal.atacou();
-    animal.comeu();
-    animal.dormiu();
-    animal.matar();
+    let tatu = new Animal('Pelo Sujo', 'Tolypeutes', 'Marrom', 'Bordas da Mata');
+    tatu.correu();
+    tatu.atacou();
+    tatu.comeu();
+    tatu.dormiu();
 
 </script>
