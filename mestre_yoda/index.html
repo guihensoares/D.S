@@ -4,13 +4,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chat do Yoda</title>
+    <title>YodaCast</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="./model.js"></script>
 </head>
 
 <body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card mx-2" onclick="selecionarPersonagem('yoda', './imagens/master_yoda_pixelart.png')">
+                    <img src="./imagens/master_yoda_pixelart.png" width="115px">
+                </div>
+                <div class="card mx-2"
+                    onclick="selecionarPersonagem('coringa', 'https://cdn2.steamgriddb.com/icon_thumb/f1eba978f8a36c92875063b46fd7e3a1.png')">
+                    <img src="https://cdn2.steamgriddb.com/icon_thumb/f1eba978f8a36c92875063b46fd7e3a1.png"
+                        width="115px">
+                </div>
+                <div class="card mx-2"
+                    onclick="selecionarPersonagem('gollum', 'https://pixeljoint.com/files/icons/preview153.gif')">
+                    <img src="https://pixeljoint.com/files/icons/preview153.gif" width="115px">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row d-flex justify-content-center mb-3">
@@ -53,12 +73,18 @@
     </div>
 
     <script>
+        let personagem
+        function selecionarPersonagem(nome, foto) {
+            personagem = new Personagem(nome, foto);
+        }
+
         let chat = document.getElementById('chat');
 
         function perguntar() {
             let pergunta = document.getElementById('pergunta').value;
 
             const KEY = `CHAVE-AQUI`;
+
             const URL = `https://api.openai.com/v1/chat/completions`;
 
             fetch(URL, {
@@ -70,7 +96,7 @@
                 body: JSON.stringify({
                     model: 'gpt-4o-mini',
                     messages: [
-                        { role: 'system', content: 'Me responda como se você fosse o mestre yoda, de forma curta e clara' },
+                        { role: 'system', content: `Me responda como se você fosse o ${personagem.nome}, de forma curta e clara` },
                         { role: 'user', content: pergunta },
                     ],
                     max_tokens: 50
@@ -90,11 +116,18 @@
                     card_perg.innerText = pergunta;
 
                     let card_resp = document.createElement('div');
-                    card_resp.classList.add('respostaYoda', 'card', 'm-1', 'p-2','shadow', 'text-light')
-                    card_resp.innerText = resp.choices[0].message.content;
+                    card_resp.classList.add('respostaYoda', 'card', 'm-1', 'p-2', 'shadow', 'text-light')
+                    card_resp.innerText = personagem.nome + ' diz: ' + resp.choices[0].message.content;
+
+                    let foto = document.createElement('img');
+                    foto.setAttribute('src', personagem.foto);
+                    foto.setAttribute('width', '70px');
+
+                    col_resp.appendChild(foto);
 
                     chat.appendChild(col_perg);
                     chat.appendChild(col_resp);
+
                     col_perg.appendChild(card_perg);
                     col_resp.appendChild(card_resp);
                 })
