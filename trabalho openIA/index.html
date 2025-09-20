@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SongIA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./imagens/song-icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="./model.js"></script>
-    <script src="./main.js"></script>
 </head>
-<body>
-    
-    
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Coluna Esquerda: Histórico -->
+            <div class="col-12 col-md-3">
+                <div class="card shadow p-3 m-2" id="card_historico">
+                    <h5 class="text-center">Histórico de Músicas</h5>
+                    <!-- <div class="col-12 d-flex">
+                        <div class="card m-1 p-2 bg-secondary text-light w-100">musica1</div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Pergunta + Resposta -->
+            <div class="col-12 col-md-9">
+
+                <!-- Pergunta -->
+                <div class="card shadow p-4 m-2">
+                    <div class="row align-items-center">
+
+                        <!-- Imagem -->
+                        <div class="col-12 col-lg-4 d-flex justify-content-center mb-3 mb-lg-0">
+                            <img src="./imagens/song-lyrics.png" class="img-fluid w-50">
+                        </div>
+
+                        <!-- Formulário -->
+                        <div class="col-12 col-lg-8">
+
+                            <!-- Nome e Estilo lado a lado -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nome_musica" class="form-label">Digite o nome da música</label>
+                                    <input type="text" class="form-control" id="nome_musica" placeholder=". . .">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="estilo_musica" class="form-label">Digite o estilo da música</label>
+                                    <input type="text" class="form-control" id="estilo_musica" placeholder=". . .">
+                                </div>
+                            </div>
+
+                            <!-- Tema -->
+                            <div class="mb-3">
+                                <label for="tema_musica" class="form-label">Digite o tema da música</label>
+                                <input type="text" class="form-control" id="tema_musica" placeholder=". . .">
+                            </div>
+
+                            <button type="button" class="btn btn-info w-100" onclick="criar()">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resposta -->
+                <div class="card shadow m-2">
+                    <div class="card-body">
+                        <div class="row" id="letra">
+                            <!-- <div class="col-12 d-flex justify-content-start">
+                                <div class="card m-1 p-2 bg-info text-light">letra da música</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- fim col direita -->
+
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
